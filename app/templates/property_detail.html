@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Property Detail</title>
+</head>
+<body>
+    <h1>Property Detail</h1>
+    <div>
+        <img src="{{ url_for('get_image', filename=property.filename) }}" alt="Property Image">
+        <h2>{{ property.title }}</h2>
+        <p>{{ property.description }}</p>
+        <p>Number of rooms: {{ property.num_of_rooms }}</p>
+        <p>Number of bathrooms: {{ property.num_of_bathrooms }}</p>
+        <p>Location: {{ property.location }}</p>
+        <p>Price: ${{ property.price }}</p>
+        <p>Type: {{ property.property_type }}</p>
+    </div>
+</body>
+</html>

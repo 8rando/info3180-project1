@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Properties</title>
+</head>
+<body>
+    <h1>All Properties</h1>
+    <ul>
+        {% for prop in propertys %}
+            <li>
+                <img src="{{ url_for('get_image', filename=prop.filename) }}" alt="Property Image">
+                <a href="{{ url_for('property_detail', property_id=prop.id) }}">
+                    {{ prop.title }}
+                </a>
+                - {{ prop.location }} - ${{ prop.price }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

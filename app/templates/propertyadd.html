@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Property</title>
+</head>
+<body>
+    <h1>Add New Property</h1>
+    <form method="post" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.title.label }}<br>
+            {{ form.title(size=30) }}
+        </p>
+        <p>
+            {{ form.description.label }}<br>
+            {{ form.description(size=80) }}
+        </p>
+        <p>
+            {{ form.num_of_rooms.label }}<br>
+            {{ form.num_of_rooms }}
+        </p>
+        <p>
+            {{ form.num_of_bathrooms.label }}<br>
+            {{ form.num_of_bathrooms }}
+        </p>
+        <p>
+            {{ form.price.label }}<br>
+            {{ form.price }}
+        </p>
+        <p>
+            {{ form.property_type.label }}<br>
+            {{ form.property_type }}
+        </p>
+        <p>
+            {{ form.location.label }}<br>
+            {{ form.location(size=30) }}
+        </p>
+        <p>
+            {{ form.property_photo.label }}<br>
+            {{ form.property_photo }}
+        </p>
+        <p>
+            <button type="submit">Submit</button>
+        </p>
+    </form>
+</body>
+</html>
