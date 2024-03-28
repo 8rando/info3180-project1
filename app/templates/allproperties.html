@@ -1,21 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>All Properties</title>
-</head>
-<body>
-    <h1>All Properties</h1>
-    <ul>
-        {% for prop in propertys %}
-            <li>
-                <img src="{{ url_for('get_image', filename=prop.filename) }}" alt="Property Image">
-                <a href="{{ url_for('property_detail', property_id=prop.id) }}">
-                    {{ prop.title }}
-                </a>
-                - {{ prop.location }} - ${{ prop.price }}
-            </li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+{%extends 'base.html'%}
+{% include 'flash_messages.html' %}
+<link rel ="stylesheet" type="text/css" href="{{url_for('static', filename='css/app.css')}}">
+
+{% block main%}
+<h1>Properties</h1>
+<div class="properties">
+    {% for property in prope %}
+        <div class = "propcard">
+            <img src ="{{ url_for('get_image', filename= property.photo) }}" alt="Property:{{ property.title }}">
+            <div class = "details">
+                <div class = "titlesection">
+                    <h4>{{ property.propertytitle }}</h4>
+                </div>
+                <div class ="locatsection">
+                    <p>{{ property.location }}</p>
+                </div>
+                <div class = "bubble">
+                    <p>{{ property.price }}</p>
+                </div>
+                <br>
+                <br>
+                <a class = "viewprop" href ="{{ url_for('eachproperty', propertyid = property.id) }}">View Property</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{%endblock%}

@@ -1,0 +1,50 @@
+{% extends 'base.html'%}
+<link rel ="stylesheet" type="text/css" href="{{url_for('static', filename='css/app.css')}}">
+{%block main%}
+<div class="addition">
+<h1>Add New Property</h1>
+<div class="add-details">
+<form action="{{ url_for('create') }}"  method="post" enctype="multipart/form-data">
+    {{form.csrf_token}}
+    <div class="property">
+        {{form.propertytitle.label()}}
+        {{form.propertytitle(class='form-control')}}
+        
+    </div>
+    <div class="property">
+        {{form.description.label()}}
+        {{form.description(class='form-control')}}
+    </div>
+    <div class="twocolums">
+        <div class="rooms">
+            {{form.rooms.label()}}
+            {{form.rooms(class='form-control')}}
+        </div>
+        <div class="bathrooms">
+            {{form.bathrooms.label()}}
+            {{form.bathrooms(class='form-control')}}
+        </div>
+        <div class="price">
+            {{form.price.label()}}
+            {{form.price(class='form-control')}}
+        </div>
+        <div class="protype">
+            {{form.proptype.label()}}
+            {{form.proptype(class='form-control')}}
+        </div>
+        <div class="location">
+            {{form.location.label()}}
+            {{form.location(class='form-control')}}
+        </div>
+    </div>
+    <div class="photo">
+        {{ form.photo.label(class="form-label") }}
+        {{ form.photo(class="form-control") }}
+    </div>
+    <br>
+        <button type="submit" name="submit" class="btn btn-primary">Add Property</button>
+      
+</form>
+</div>
+</div>
+{% endblock %}

@@ -1,41 +1,108 @@
 body {
     padding-top: 5rem;
 }
-
-.form-login {
-    max-width: 330px;
-    padding: 15px;
+/* styling of the form */
+h1{
+    padding-bottom: 20px;
 }
 
-.form-login input[type="text"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-}
 
-.form-login input[type="password"] {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
 
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-gap: 15px;
+.add-details {
+    padding: 20px;
 }
+ 
 
-.image-item {
-    position: relative;
+/* Styling of the list of properties */
+h4{
+    font-size: 20px;
+
+}
+.properties{
+    display:flex;
+    flex-wrap:wrap;
+    align-items: center;
     overflow: hidden;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+.propcard{
+    box-sizing: border-box;
+    padding:5px;
+    padding-bottom:0px;
+    margin:20px;
+    border: 3px;
+    overflow:hidden;
+    width: 300px;
+    height:auto;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
-.image-item img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: auto;
-    height: 100%;
-    transform: translate(-50%, -50%);
+.propcard img{
+    max-width: 300px;
+    max-height: 350px;
+    object-fit: cover;  
+}
+.locatsection{
+    color: rgb(195, 192, 192);
+
+}
+.bubble{
+    color:white;
+    font-size: 15px;
+    background-color: lightseagreen;
+    padding:3px;
+    padding-bottom:0px;
+    margin:0px;
+    border-radius: 10px;  
+    display: inline-block;
+    
+}
+.bubble p{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.location{
+    color:lightslategray;
+}
+.propcard a{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    background-color: #33c289;
+    height:50px;
+    width:300px;
+    color:white;
+
+}
+
+
+/* Styling of the individual properties */
+
+.prop{
+    display:grid;
+    grid-template-columns: 1fr 1.3fr;
+    grid-gap:10px;
+    max-width: 700px;
+    max-height:440px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top:5%;
+    margin-bottom:10%;
+    padding-bottom:5px;
+    
+}
+
+
+
+.prop img{
+    height:100%;
+    max-width:100%;
+}
+
+.propdetails button{
+    background-color: seagreen;
+    color:white;
+
 }
